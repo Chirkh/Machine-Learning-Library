@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Dec 18 09:00:21 2022
-
-@author: Chirayu
-"""
-
 import numpy as np
 
 class KNeighbours:
@@ -56,7 +49,7 @@ class KNeighbours:
                 maximum=amounts[key]
         return major_neighbour
                 
-
+'''
 #Simple testing example
 
     
@@ -68,6 +61,6 @@ data=np.append(x, y, axis=1)
 
 model=KNeighbours(data,3)
 print(model.predict(np.reshape([1], (1,1))))
-
+'''
         
         
