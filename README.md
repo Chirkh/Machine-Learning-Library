@@ -9,7 +9,7 @@ Machine learning library in Python implementing large variety of supervised and 
 * KNN
 * PCA
 * Neural Networks
-* Naive bayes
+* Naive Bayes
 
 ## Dependencies
 Python, NumPy
