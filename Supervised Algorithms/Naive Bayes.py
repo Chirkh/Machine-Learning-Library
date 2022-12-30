@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 20 13:12:16 2022
-
-@author: madhu
-"""
 
 import numpy as np
 
@@ -63,7 +57,7 @@ class NaiveBayes:
         return np.exp(-((x-mu)**2/2*sigma2))/(2*np.pi*sigma2)**0.5
     
     
-
+'''
 #Testing on simple data set
 
 x=[1,0,2,5,6]
@@ -74,6 +68,6 @@ data=np.append(x, y, axis=1)
                     
 classifier=NaiveBayes(data)
 print(classifier.predict(np.array([[7]])))                
-                    
+'''                   
         
         
