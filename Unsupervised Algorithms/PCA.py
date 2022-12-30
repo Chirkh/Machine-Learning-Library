@@ -3,7 +3,7 @@
 import numpy as np
 
 class PCA:
-    ''' Implements PCA as a method to reuce the dimensionality of the data'''
+    ''' Implements PCA as a method to reduce the dimensionality of the data'''
     def __init__(self, x, k):
         ''' k: How many dimensions we want to reduce to
             x: np array of features
