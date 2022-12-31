@@ -1,7 +1,10 @@
 import numpy as np
 
 '''
-Dense, fully connected neural network
+Dense, fully connected neural network.
+These classes take in seperate x and y values rather than accepting a full data array to fit the model like rest of the the 
+algorithms. The reason for this is for neural networks you often break the data into training and testing sets and as such a
+seperation of x and y values is often useful.
 '''
 
 class connected_Layer:
