@@ -10,7 +10,7 @@ seperation of x and y values is often useful.
 class connected_Layer:
     
     def __init__(self, in_dim, out_dim, f):
-        Activations={'relu':self.relu, 'tanh':self.tanh}
+        Activations={'relu':self.relu, 'tanh':self.tanh, 'sigmoid':self.sigmoid}
         self.f=Activations[f]
         self.weights=np.random.rand(in_dim, out_dim)-0.5
         self.biases=np.random.rand(1, out_dim)-0.5
@@ -40,6 +40,11 @@ class connected_Layer:
         deriv[deriv<=0]=0
         deriv[deriv>0]=1
         return [np.maximum(x,0), deriv]
+    
+    def sigmoid(self,x):
+        A=1/(1+np.exp(-x))
+        deriv=A*(1-A)
+        return [A, deriv]
     
 class NN:
     ''' CLass to create the neural network'''
