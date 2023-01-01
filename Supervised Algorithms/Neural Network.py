@@ -14,7 +14,6 @@ class connected_Layer:
         self.f=Activations[f]
         self.weights=np.random.rand(in_dim, out_dim)-0.5
         self.biases=np.random.rand(1, out_dim)-0.5
-        print(type(self.biases))
         
     def forward_prop(self, x):
         self.x=x # Entering the layer
