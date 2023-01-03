@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Dec 17 19:41:38 2022
-
-@author: madhu
-"""
 
 ''' Logistic regression for 2 class classification'''
 
