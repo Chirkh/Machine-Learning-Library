@@ -52,4 +52,4 @@ class KMeansCluster:
        
     @staticmethod      
     def euclidean(x, y):
-        return ((x[0]-y[0])**2-(x[1]-y[1])**2)**0.5
+        return np.sqrt(np.sum(np.square(x - y)))
