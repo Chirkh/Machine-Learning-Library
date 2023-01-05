@@ -1,6 +1,6 @@
 # Machine-Learning-Library
 
-Machine learning library in Python implementing large variety of supervised and unsupervised algorithms as well as data processing techniques.
+Machine learning library in Python implementing large variety of supervised and unsupervised algorithms as well as data processing techniques. More Algorithms to come.
 
 ## Algorithms/Features
 * Linear Regression (L1 and L2 regularisation included)
@@ -8,7 +8,7 @@ Machine learning library in Python implementing large variety of supervised and 
 * K Means
 * KNN
 * PCA
-* Neural Networks
+* Neural Networks (Supports tanh, sigmoid and relu activation functions)
 * Naive Bayes
 
 ## Dependencies
