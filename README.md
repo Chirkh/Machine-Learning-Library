@@ -1,6 +1,6 @@
 # Machine-Learning-Library
 
-Machine learning library in Python implementing large variety of supervised and unsupervised algorithms as well as data processing techniques. More Algorithms to come.
+Library of functions in Python implementing large variety of supervised and unsupervised machine learning algorithms. More Algorithms to come.
 
 ## Algorithms/Features
 * Linear Regression (L1 and L2 regularisation included)
