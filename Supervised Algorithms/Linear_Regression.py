@@ -54,8 +54,13 @@ class LinearRegress:
         x=np.hstack((bias_terms, x))
         return x@(self.theta)
     
+    def coefficients(self):
+        return self.theta[1:].reshape(len(self.theta[1:]),)
     
-'''  
+    def bias(self):
+        return self.theta[0]
+    
+'''
 # Now we make an example to test the code, a straight line
 
 x=np.reshape(np.random.randn(50),(50,1))
@@ -70,10 +75,13 @@ data=np.append(x, y, axis=1)
 
 regressor=LinearRegress(data)
 regressor.grad_desc_fit(eta=0.1, epochs=100, l2=True, l1=False, lmda=0)
-  
+
+print(regressor.coefficients())
+print(regressor.bias())
 #print(regressor.theta)            
-print(regressor.regress(np.reshape([1],(1,1))))
+#print(regressor.regress(np.reshape([1],(1,1))))
 #print(regressor.x)
 #print(regressor.y)
+
 '''
   
