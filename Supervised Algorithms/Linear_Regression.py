@@ -27,7 +27,6 @@ class LinearRegress:
         return Z
     
     def grad_desc_fit(self, eta, epochs, l1=False, l2=False, lmda=0):
-        #lmda=0 -> no regularisation parameter
         initial_cost=self.cost(lmda, l1, l2)[0][0]
         print('Initial cost: ', initial_cost)
         for i in range(epochs):
@@ -50,7 +49,7 @@ class LinearRegress:
         return base_loss
     
     def regress(self,x):
-        x=(x-self.mean)/self.sigma
+        x=(x-self.mean)/self.sigma # normalise the data
         bias_terms=np.ones((x.shape[0],1))
         x=np.hstack((bias_terms, x))
         return x@(self.theta)
