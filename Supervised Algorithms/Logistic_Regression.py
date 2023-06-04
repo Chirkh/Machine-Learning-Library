@@ -30,9 +30,9 @@ class LogisticRegress:
     def cost(self):
         # Calculating the cost for given theta
         pred=self.x@self.theta
-        cost_0=self.y.T@(np.log(self.sigmoid(pred)))
-        cost_1=(1-self.y).T@(np.log(1-self.sigmoid(pred)))
-        tot_cost=-(cost_0+cost_1)/self.y.shape[0]
+        cost_0=np.log(1+np.exp(pred))
+        cost_1=np.multiply(self.y,pred)
+        tot_cost=np.sum(cost_0)-np.sum(cost_1)
         return tot_cost
     
     def grad_desc_fit(self, eta, epochs):
@@ -41,8 +41,13 @@ class LogisticRegress:
         print('Initial cost: ', initial_cost)
         for i in range(epochs):
             x_pred=np.matmul(self.x,self.theta)
-            grad=np.matmul(self.x.T,(self.sigmoid(x_pred)-self.y))
-            self.theta-=grad*eta/len(self.y)
+            grad=np.zeros((len(self.theta)))
+            for j in range(len(self.x)):
+                c=np.exp(x_pred[j][0])
+                grad+=((c/(1+c))*self.x[j])
+                grad-=self.y[j][0]*self.x[j]
+            grad=np.reshape(grad, (len(grad),1))
+            self.theta-=grad*eta
         final_cost=self.cost()
         print('Final cost: ', final_cost)
             
@@ -74,7 +79,7 @@ class LogisticRegress:
         return 1/(1+np.exp(-x))    
 
 '''
-Testing on simple data set
+#Testing on simple data set
 
 x=[0,0,0,1,1]
 y=[0,0,0,1,1]
@@ -83,8 +88,10 @@ y=np.reshape(y,(5,1))
 data=np.append(x, y, axis=1)
 
 regressor=LogisticRegress(data)
-regressor.grad_desc_fit(eta=0.1, epochs=500)
-print(regressor.regress(np.reshape([1,0],(2,1))))    
-    
- '''       
+regressor.grad_desc_fit(eta=0.1, epochs=1000)
+print(regressor.regress(np.reshape([-2,0],(2,1))))    
+'''    
+      
+        
+
         
