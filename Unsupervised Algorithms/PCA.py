@@ -17,12 +17,10 @@ class PCA:
        
         covariance=np.cov(self.x.T)
         v,lmbda=np.linalg.eig(covariance) # Calculate the eigenvectors and eigenvalues
-        v=v.T # We transpose the eigenvectors so they are easier to work with, eogenvectors now go across columns
-        # so c[i] is the eigenvector correspnding to eiganvalue [i]
         # We want the eigenvectors corresponding to k highest eigenvalues
         indices=np.argsort(lmbda)
         k_indices=indices[::-1][:self.k]
-        eigenvectors=v[k_indices]
+        eigenvectors=v[:,k_indices]
         self.components=eigenvectors
        
     def apply(self,x):
