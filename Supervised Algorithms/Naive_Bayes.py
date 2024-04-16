@@ -51,9 +51,6 @@ class NaiveBayes:
         # in the process of calculating the posterior probability
         mu=self.Mean[i]
         sigma2=self.Var[i]
-        # If variance is 0, then we simply set it to a small value
-        if sigma2==0:
-            sigma2=0.001
         return np.exp(-((x-mu)**2/2*sigma2))/(2*np.pi*sigma2)**0.5
     
     
