@@ -21,8 +21,6 @@ class LinearRegress:
     def normalise_features(self, xs):
         self.mean=np.mean(xs, axis=0)
         self.sigma=np.std(xs, axis=0)
-        if self.sigma==0: # To prevent dividing by zero errors
-            self.sigma=0.1
         Z=(xs-self.mean)/self.sigma
         return Z
     
